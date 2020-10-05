@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Plot Profile Shapes</title>
+</head>
+<body>
+<style>
+table {
+  width:100%;
+}
+table, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+tr, td {
+  padding: 15px;
+  text-align: left;
+  
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+
+</style>
+
+<form method="POST" id="form1">
+
+<FIELDSET><LEGEND><strong>Reference Point (required)</strong></LEGEND>
+<TABLE>
+<TR>
+	<td>Latitude: <INPUT TYPE="text" NAME="rp_lat" size="20"></td>
+	<td>Longitude: <INPUT TYPE="text" NAME="rp_long" size="20"></td>
+</TR>
+</TABLE>
+</FIELDSET>
+
+<br>
+
+<FIELDSET><LEGEND><strong>Racecourse settings (all fields required)</strong></LEGEND>
+<TABLE>
+<TR>
+	<td>Nearest distance (m): <INPUT TYPE="text" NAME="rc_nearest" size="20"></td>
+	<td>Furthest distance (m): <INPUT TYPE="text" NAME="rc_furthest" size="20"></td>
+	<td>Width of RC (m): <INPUT TYPE="text" NAME="rc_span" size="20"></td>
+	<td>Bearing: <INPUT TYPE="text" NAME="rc_bearing" size="20"></td>
+</TR>
+</TABLE>
+</FIELDSET>
+
+<br>
+
+<FIELDSET><LEGEND><strong>Circle / Sector settings (all fields required)</strong></LEGEND>
+<TABLE>
+<TR>
+	<td>Circle / Sector radius (m): <INPUT TYPE="text" NAME="circle_radius" size="20"></td>
+	<td>Circle / Sector start bearing: <INPUT TYPE="text" NAME="start_bearing" size="20"></td>
+	<td>Degrees of each interval: <INPUT TYPE="text" NAME="intervals" size="20"></td>
+	<td>Angular span: <INPUT TYPE="text" NAME="span" size="20"></td>
+</TR>
+</TABLE>
+</FIELDSET>
+
+<br>
+
+<FIELDSET><LEGEND><strong>Line settings (all fields required)</strong></LEGEND>
+<TABLE>
+<TR>
+	<td>Bearing: <INPUT TYPE="text" NAME="line_bearing" size="20"></td>
+	<td>Length (m): <INPUT TYPE="text" NAME="line_length" size="20"></td>
+</TR>
+</TABLE>
+</FIELDSET>
+
+<br>
+
+<FIELDSET><LEGEND><strong>File names (relevant file name required)</strong></LEGEND>
+<TABLE>
+<TR>
+	<td>HTML Map (full path including .html): <INPUT TYPE="text" NAME="folium_map" size="20"></td>
+	<td>KML_circle (full path including .kml): <INPUT TYPE="text" NAME="kml_circle" size="20"></td>
+	<td>KML_racecourse (full path including .kml): <INPUT TYPE="text" NAME="kml_racecourse" size="20"></td>
+	<td>KML_line (full path including .kml): <INPUT TYPE="text" NAME="kml_line" size="20"></td>
+</TR>
+</TABLE>
+</FIELDSET>
+
+</form>
+
+<br><br>
+<button type="submit" name="button1" form="form1" value="visualise">Visualise map in browser</button>
+<button type="submit" name="button2" form="form1" value="generate">Generate KML for Google Earth</button>
+<button type="reset" form="form1">Reset values</button>
+
+</body>
+</html>
