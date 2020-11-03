@@ -20,7 +20,7 @@ def processing(data_dict):
     shapes={'circle':circle,'racecourse':rc,'line':line}
     #check if first line is empty
     for key, value in shapes.items():
-        if value[0][0] is not '':
+        if value[0][0] != '':
             data_shape.append(key)
         
     for s in shapes.keys():
@@ -30,8 +30,10 @@ def processing(data_dict):
     #distinguish whether it is visualise or it is generate
     if 'button1' in data_dict.keys():  #visualise
         instructions.append('visualise')    
-    else:    #generate
+    elif 'button2' in data_dict.keys():    #generate
         instructions.append('generate')
+    else:
+        instructions.append('draw')
     
     return data_shape,instructions
         
